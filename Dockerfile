@@ -3,7 +3,7 @@ FROM alpine
 LABEL MAINTAINER="jj@nowhere.com"
 
 RUN apk add openjdk8
-RUN apk add maven -y
+RUN apk add maven
 
 EXPOSE 8081
 
