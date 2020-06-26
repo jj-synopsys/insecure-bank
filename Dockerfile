@@ -1,13 +1,14 @@
-FROM alpine
+FROM ubuntu
 
 LABEL MAINTAINER="jj@nowhere.com"
 
-RUN apk add openjdk8
-RUN apk add maven
-
-EXPOSE 8081
+RUN apt update
+RUN apt install openjdk-8-jdk -y
+RUN apt install maven -y
 
 WORKDIR /opt/deploy/
 COPY target/*.war ./
+
+EXPOSE 8081
 
 CMD mvn cargo:run
