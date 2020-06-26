@@ -7,7 +7,7 @@ RUN apt install openjdk-8-jdk -y
 RUN apt install maven -y
 
 WORKDIR /opt/deploy/
-COPY target/*.war ./
+COPY target/*.war /opt/deploy/
 
 EXPOSE 8081
 
